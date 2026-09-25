@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <h1>Rock Papers Scissors</h1>
+    <button onclick="{
+        const randomNumber = Math.random();
+        let computerMove;
+        let result;
+
+        if (randomNumber < 1/3){
+            computerMove = 'Rock';
+        }else if (randomNumber < 2/3){
+            computerMove = 'Paper';
+        }else{
+            computerMove = 'Scissors';
+        }
+
+        if(computerMove === 'Rock'){
+            result = 'Tie';
+        }else if(computerMove === 'Paper'){
+            result = 'You lose';
+        }else{
+            result = 'You win';
+        }
+
+        alert('You chose Rock. Computer chose ' + computerMove + '. ' + result);
+    }">Rock</button>
+
+    <button onclick="{
+        const randomNumber = Math.random();
+        let computerMove;
+        let result;
+
+        if (randomNumber < 1/3){
+            computerMove = 'Rock';
+        }else if (randomNumber < 2/3){
+            computerMove = 'Paper';
+        }else{
+            computerMove = 'Scissors';
+        }
+        if(computerMove === 'Rock'){
+            result = 'You win';
+        }else if(computerMove === 'Paper'){
+            result = 'Tie';
+        }else{
+            result = 'You lose';
+        }
+
+        alert('You chose Paper. Computer chose ' + computerMove + '. ' + result);
+    }">Paper</button>
+
+    <button onclick="{
+        const randomNumber = Math.random();
+        let computerMove;
+        let result;
+
+        if (randomNumber < 1/3){
+            computerMove = 'Rock';
+        }else if (randomNumber < 2/3){
+            computerMove = 'Paper';
+        }else{
+            computerMove = 'Scissors';
+        }
+        if(computerMove === 'Rock'){
+            result = 'You lose';
+        }else if(computerMove === 'Paper'){
+            result = 'You win';
+        }else{
+            result = 'Tie';
+        }
+
+        alert('You chose Scissors. Computer chose ' + computerMove + '. ' + result);
+    }">Scissors</button>
+
+    <script>
+        
+    </script>
+</body>
+</html>
