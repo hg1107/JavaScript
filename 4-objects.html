@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        const product = {
+            name: 'Socks',
+            price: 1090
+        };
+        console.log(product);
+        console.log(product.name);
+        console.log(product.price);
+
+        product.price = 1100;
+        console.log(product);
+
+        product.color = 'red';
+        console.log(product);
+
+        delete product.price;
+        console.log(product);
+        
+
+
+
+        const product2 = {
+            name: 'shirt',
+            rating: {
+                starts: 4.5,
+                count: 87
+            },
+            func: function func1(){
+                console.log("Function inside object");
+            }
+        };
+        console.log(product2);
+        console.log(product2['name']);
+        console.log(product2['delivery-time']);     // If we have used normal dot notation here, for an undefined value it will throw error.
+        
+        console.log(product2.rating.count);
+        product2.func();
+
+        const jsonString = JSON.stringify(product2);        // Convert JS Object into JSON String
+        console.log(jsonString);
+
+        const JSObject = JSON.parse(jsonString);        // Convert JSON String into JS Object
+        console.log(JSObject);
+
+
+        
+        const object1 = {
+            message: 'Hello'
+        };
+        // const message = object1.message;
+        const { message } = object1;
+        console.log(message);
+
+    </script>
+</body>
+</html>
