@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+        function func1(){
+            console.log("Hello");
+            console.log(2);
+        }
+        func1();
+
+        // Parameters:
+        function calculateTax(price, taxPercent = 0.1){
+            console.log(price * taxPercent);
+        }
+        calculateTax(1000, 0.1);
+        calculateTax(2000, 0.5);
+        calculateTax(3000);
+    </script>
+</body>
+</html>
