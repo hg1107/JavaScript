@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <button>Hello</button>
+    <button class = "js-button">Second Button</button>
+
+    <script>
+        document.querySelector('button').innerHTML = 'Hi';
+        document.querySelector('button').style.color = 'red';
+
+        document.querySelector('.js-button').style.color = 'blue';
+        const buttonElement = document.querySelector('.js-button');
+        console.log(buttonElement);
+        /*
+        // Properties:
+        document.title = 'Changed';
+        document.body.innerHTML = '<button>Good Job</button>';
+        */
+        
+
+        /*
+        document.body.innerHTML = 'Hello';
+        document.title = "DOM";
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Project</title>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button class = 'js-subscribe' onclick = "Subscribe()">Subscribe</button>
+
+    <br><br><br><br>
+    <p>Rock Paper Scissors</p>
+    <a href="5-DomRPS.html" target="_blank">Click Here!</a>
+    
+    <script>
+        const buttonSubs = document.querySelector('.js-subscribe');
+        function Subscribe() {
+            if (buttonSubs.innerText === 'Subscribe') {
+            buttonSubs.innerText = 'Subscribed';
+            buttonSubs.style.backgroundColor = 'grey';
+            } else if (buttonSubs.innerText === 'Subscribed') {
+                buttonSubs.innerText = 'Subscribe';
+                buttonSubs.style.backgroundColor = 'lightgrey';
+            }
+        }
+    </script>
+</body>
+</html>
