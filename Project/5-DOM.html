@@ -12,7 +12,16 @@
     <br><br><br><br>
     <p>Rock Paper Scissors</p>
     <a href="5-DomRPS.html" target="_blank">Click Here!</a>
+
+    <br><br><br><br>
+    <p>Amazon Shipping Cost Calculator</p>
+    <p>Orders under $40 = +$10 Shipping</p>
+    <p>Orders of $40 or more = Free Shipping</p>
+    <input type="text" placeholder="Cost of Order" class="js-cost-of-order"onkeydown="OnEnter(event)">
+    <button onclick="CalculateTotal()">Calculate</button>
+    <p class = "js-total-cost"></p>
     
+
     <script>
         const buttonSubs = document.querySelector('.js-subscribe');
         function Subscribe() {
@@ -22,6 +31,20 @@
             } else if (buttonSubs.innerText === 'Subscribed') {
                 buttonSubs.innerText = 'Subscribe';
                 buttonSubs.style.backgroundColor = 'lightgrey';
+            }
+        }
+
+        function CalculateTotal() {
+            const CostOfOrder = document.querySelector('.js-cost-of-order');
+            let cost = Number(CostOfOrder.value);
+            if (cost < 40) {
+                cost += 10;
+            }
+            document.querySelector('.js-total-cost').innerHTML = `Total cost: $${cost}`;
+        }
+        function OnEnter(event) {
+            if (event.key === 'Enter') {
+                CalculateTotal();
             }
         }
     </script>
