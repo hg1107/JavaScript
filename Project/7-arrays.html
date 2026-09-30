@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do</title>
+    <link rel="stylesheet" href="7-arrays.css">
 </head>
 <body>
     <h1>ToDo List Practice</h1>
-    <input type="text" placeholder="Todo name" class = "js-input-field" onkeydown="OnEnter(event)">
-    <button onclick = "AddTask()" >Add</button>
-    <p class = "js-todo-list"></p>
+    <div class="input-grid">
+        <input type="text" placeholder="Todo name" class = "js-input-field name-input" onkeydown="OnEnter(event)">
+        <input type="date" class = "js-date date-input" onkeydown = "OnEnter(event)">
+        <button class = "add-button" onclick = "AddTask()" >Add</button>
+    </div>
+    <div class = "js-todo-list todo-grid"></div>
     
     <script src = "../Scripts/7-Todo.js"></script>
 </body>
