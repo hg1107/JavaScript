@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="Styles/8-RPSFunction.css">
+</head>
+<body>
+    <h1 class = "title">Rock Papers Scissors</h1>
+    <button class = "move-button" onclick="{
+        playGame('Rock');
+    }"><img src="Images/Rock-emoji.png" class="move-icon "></button>
+
+    <button class = "move-button" onclick="{
+        playGame('Paper');
+    }"><img src="Images/Paper-emoji.png" class="move-icon"></button>
+
+    <button class = "move-button" onclick="{
+        playGame('Scissors');
+    }"><img src="Images/Scissors-emoji.png" class="move-icon"></button>
+
+    <p class="js-move-result"></p>
+    <p class="js-result result"></p>
+
+    <p class="js-score score">Wins: 0, Losses: 0, Ties: 0</p>
+    <button class = "reset-score-button" onclick = "resetButton()">Reset Score</button>
+    <button class = "auto-play-button" onclick = "autoPlay()">Auto Play</button>
+
+    <script src = "Scripts/8-RPS.js"></script>
+</body>
+</html>

@@ -24,8 +24,20 @@
         display(function1);
 
 
-        setTimeout(function1, 5000);
+        setTimeout(function1, 3000);        // Asynchronous Code
         console.log("Written after SetTimeout");
+
+        // setInterval(function1, 3000);
+        // console.log("Next");
+
+        // Looping through array:
+        const toDOList = [
+            'make dinner',
+            'wash dishes',
+            'walk the dog',
+        ].forEach(function(value, index) {
+            console.log(`${index} : ${value}`);
+        });
 
     </script>
 </body>
