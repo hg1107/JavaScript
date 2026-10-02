@@ -13,6 +13,17 @@ function pickComputerMove(){
     return computerMove;
 }
 
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === 'r') {
+        playGame('Rock');
+    } else if (event.key === 'p') {
+        playGame('Paper');
+    } else if (event.key === 's') {
+        playGame('Scissors');
+    }
+})
+
+
 function playGame(playerMove){
     const computerMove = pickComputerMove();
 
@@ -61,6 +72,7 @@ function playGame(playerMove){
     scoreElement.innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 
 }
+
 function resetButton () {
     score.wins = 0;
     score.losses = 0;
@@ -86,3 +98,4 @@ function autoPlay () {
         document.querySelector('.js-auto-play-button').innerHTML = 'Auto Play';
     }
 }
+

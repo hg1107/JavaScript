@@ -6,7 +6,16 @@
     <title>Advance Functions</title>
 </head>
 <body>
+    <button class = "js-button">Click</button>
     <script>
+        const buttonElement = document.querySelector('.js-button');
+        const eventListener = () => {
+            console.log("Click");
+        };
+        buttonElement.addEventListener('click', eventListener);
+        buttonElement.removeEventListener('click', eventListener);
+
+
         function greeting() {
             console.log("Hello");
         }
@@ -39,6 +48,27 @@
             console.log(`${index} : ${value}`);
         });
 
+        const arrowFunction = () => {
+            console.log("Hello");
+        };
+        arrowFunction();
+
+        const oneLine = () => console.log("One line Arrow function");
+        oneLine();
+
+        const object2 = {
+            method() {
+                console.log("Shorthand method for storing methods");
+            }
+        }
+
+        // Filter, Map:
+        const num = [1, -3, 5];
+        console.log(num.filter((value, index) => {
+            return value >= 0
+        }));
+
+        console.log([1, 1, 3].map(value => value * 2 ));
     </script>
 </body>
 </html>
