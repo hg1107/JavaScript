@@ -144,7 +144,7 @@ export const products = [
       count: 562,
     },
     priceCents: 2499,
-    keywords: ["footwear", "sandals", "womens", "beach", "summer"],
+    keywords: ["footwear", "sandals", "women", "beach", "summer"],
   },
   {
     id: "901eb2ca-386d-432e-82f0-6fb1ee7bf969",
@@ -210,7 +210,7 @@ export const products = [
       count: 52,
     },
     priceCents: 1799,
-    keywords: ["jewelry", "accessories", "womens"],
+    keywords: ["jewelry", "accessories", "women"],
   },
   {
     id: "b0f17cc5-8b40-4ca5-9142-b61fe3d98c85",
@@ -221,7 +221,7 @@ export const products = [
       count: 2465,
     },
     priceCents: 1374,
-    keywords: ["hooded", "hoodies", "sweaters", "womens", "apparel"],
+    keywords: ["hooded", "hoodies", "sweaters", "women", "apparel"],
     type: "clothing",
     sizeChartLink: "images/clothing-size-chart.png",
   },
@@ -245,7 +245,7 @@ export const products = [
       count: 326,
     },
     priceCents: 2640,
-    keywords: ["shoes", "flats", "womens", "footwear"],
+    keywords: ["shoes", "flats", "women", "footwear"],
   },
   {
     id: "8b5a2ee1-6055-422a-a666-b34ba28b76d4",
@@ -291,7 +291,7 @@ export const products = [
       count: 83,
     },
     priceCents: 1250,
-    keywords: ["hats", "winter hats", "beanies", "tuques", "apparel", "womens"],
+    keywords: ["hats", "winter hats", "beanies", "tuques", "apparel", "women"],
   },
   {
     id: "ee1f7c56-f977-40a4-9642-12ba5072e2b0",
@@ -357,7 +357,7 @@ export const products = [
       count: 248,
     },
     priceCents: 2400,
-    keywords: ["pants", "sweatpants", "jogging", "apparel", "womens"],
+    keywords: ["pants", "sweatpants", "jogging", "apparel", "women"],
   },
   {
     id: "d339adf3-e004-4c20-a120-40e8874c66cb",
@@ -368,7 +368,7 @@ export const products = [
       count: 117,
     },
     priceCents: 2400,
-    keywords: ["accessories", "womens"],
+    keywords: ["accessories", "women"],
   },
   {
     id: "d37a651a-d501-483b-aae6-a9659b0757a0",
@@ -423,7 +423,7 @@ export const products = [
       count: 89,
     },
     priceCents: 3390,
-    keywords: ["shoes", "running shoes", "footwear", "womens"],
+    keywords: ["shoes", "running shoes", "footwear", "women"],
   },
   {
     id: "77a845b1-16ed-4eac-bdf9-5b591882113d",
