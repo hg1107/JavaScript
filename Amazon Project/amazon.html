@@ -1,19 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Amazon Project</title>
-
-    <!-- This code is needed for responsive design to work.
-      (Responsive design = make the website look good on
-      smaller screen sizes like a phone or a tablet). -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Load a font called Roboto from Google Fonts. -->
+    <meta name="description" content="Shop millions of products at the best prices.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Here are the CSS files for this page. -->
     <link rel="stylesheet" href="styles/shared/general.css">
     <link rel="stylesheet" href="styles/shared/amazon-header.css">
     <link rel="stylesheet" href="styles/pages/amazon.css">
@@ -22,40 +15,49 @@
     <div class="amazon-header">
       <div class="amazon-header-left-section">
         <a href="amazon.html" class="header-link">
-          <img class="amazon-logo"
-            src="images/amazon-logo-white.png">
-          <img class="amazon-mobile-logo"
-            src="images/amazon-mobile-logo-white.png">
+          <img class="amazon-logo" src="images/amazon-logo-white.png" alt="Amazon">
+          <img class="amazon-mobile-logo" src="images/amazon-mobile-logo-white.png" alt="Amazon">
         </a>
       </div>
 
       <div class="amazon-header-middle-section">
-        <input class="search-bar" type="text" placeholder="Search">
-
-        <button class="search-button">
-          <img class="search-icon" src="images/icons/search-icon.png">
+        <input class="search-bar js-search-bar" id="search-bar" type="text" placeholder="Search products…" autocomplete="off">
+        <button class="search-button" id="search-button" aria-label="Search">
+          <img class="search-icon" src="images/icons/search-icon.png" alt="">
         </button>
       </div>
 
       <div class="amazon-header-right-section">
         <a class="orders-link header-link" href="orders.html">
           <span class="returns-text">Returns</span>
-          <span class="orders-text">& Orders</span>
+          <span class="orders-text">&amp; Orders</span>
         </a>
 
-        <a class="cart-link header-link" href="checkout.html">
-          <img class="cart-icon" src="images/icons/cart-icon.png">
+        <a class="cart-link header-link" href="checkout.html" id="cart-link">
+          <img class="cart-icon" src="images/icons/cart-icon.png" alt="Cart">
           <div class="cart-quantity js-cart-quantity">0</div>
           <div class="cart-text">Cart</div>
         </a>
       </div>
     </div>
-    
+
     <div class="main">
-      <div class="products-grid js-products-grid">
+      <div class="sort-bar js-sort-container" id="sort-bar">
+        <span class="js-results-count results-count"></span>
+        <div class="sort-controls">
+          <label for="sort-select" class="sort-label">Sort by:</label>
+          <select id="sort-select" class="js-sort-select">
+            <option value="default">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Avg. Customer Review</option>
+          </select>
+        </div>
       </div>
+
+      <div class="products-grid js-products-grid"></div>
     </div>
-    
-    <script type = "module" src="Scripts/amazon.js"></script>
+
+    <script type="module" src="Scripts/amazon.js"></script>
   </body>
 </html>

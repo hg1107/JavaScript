@@ -218,3 +218,30 @@
     padding: 12px;
   }
 }
+
+/* Empty Orders State */
+.empty-orders {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  border: 1px solid rgb(213, 217, 217);
+  border-radius: 8px;
+}
+
+.empty-orders-icon {
+  font-size: 56px;
+  margin-bottom: 15px;
+}
+
+.empty-orders-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f1111;
+  margin-bottom: 8px;
+}
+
+.empty-orders p {
+  color: #565959;
+  font-size: 15px;
+}
+

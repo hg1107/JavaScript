@@ -2,67 +2,60 @@
   margin-top: 60px;
 }
 
+.sort-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 25px;
+  background: rgb(248, 248, 248);
+  border-bottom: 1px solid rgb(231, 231, 231);
+  font-size: 14px;
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+}
+
+.results-count {
+  color: rgb(100, 100, 100);
+  font-size: 13px;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-label {
+  font-size: 14px;
+  color: rgb(33, 33, 33);
+}
+
 .products-grid {
   display: grid;
-
-  /* - In CSS Grid, 1fr means a column will take up the
-       remaining space in the grid.
-     - If we write 1fr 1fr ... 1fr; 8 times, this will
-       divide the grid into 8 columns, each taking up an
-       equal amount of the space.
-     - repeat(8, 1fr); is a shortcut for repeating "1fr"
-       8 times (instead of typing out "1fr" 8 times).
-       repeat(...) is a special property that works with
-       display: grid; */
   grid-template-columns: repeat(8, 1fr);
 }
 
-/* @media is used to create responsive design (making the
-   website look good on any screen size). This @media
-   means when the screen width is 2000px or less, we
-   will divide the grid into 7 columns instead of 8. */
 @media (max-width: 2000px) {
-  .products-grid {
-    grid-template-columns: repeat(7, 1fr);
-  }
+  .products-grid { grid-template-columns: repeat(7, 1fr); }
 }
-
-/* This @media means when the screen width is 1600px or
-   less, we will divide the grid into 6 columns. */
 @media (max-width: 1600px) {
-  .products-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
+  .products-grid { grid-template-columns: repeat(6, 1fr); }
 }
-
 @media (max-width: 1300px) {
-  .products-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
+  .products-grid { grid-template-columns: repeat(5, 1fr); }
 }
-
 @media (max-width: 1000px) {
-  .products-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  .products-grid { grid-template-columns: repeat(4, 1fr); }
 }
-
 @media (max-width: 800px) {
-  .products-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .products-grid { grid-template-columns: repeat(3, 1fr); }
 }
-
 @media (max-width: 575px) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 450px) {
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
+  .products-grid { grid-template-columns: 1fr; }
 }
 
 .product-container {
@@ -70,31 +63,81 @@
   padding-bottom: 25px;
   padding-left: 25px;
   padding-right: 25px;
-
   border-right: 1px solid rgb(231, 231, 231);
   border-bottom: 1px solid rgb(231, 231, 231);
-
   display: flex;
   flex-direction: column;
+  position: relative;
+  transition: background 0.15s;
+}
+
+.product-container:hover {
+  background: rgb(252, 252, 252);
 }
 
 .product-image-container {
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 180px;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .product-image {
-  /* Images will overflow their container by default. To
-    prevent this, we set max-width and max-height to 100%
-    so they stay inside their container. */
   max-width: 100%;
   max-height: 100%;
+  transition: transform 0.2s;
 }
 
+.product-container:hover .product-image {
+  transform: scale(1.04);
+}
+
+/* ── Wishlist button ────────────────────────────────────── */
+.wishlist-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: white;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.15s, border-color 0.15s;
+  z-index: 2;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+.product-image-container:hover .wishlist-btn,
+.wishlist-btn.wishlisted {
+  opacity: 1;
+}
+
+.wishlist-btn svg {
+  fill: rgb(180, 180, 180);
+  transition: fill 0.15s, transform 0.15s;
+}
+
+.wishlist-btn.wishlisted svg {
+  fill: rgb(220, 60, 60);
+}
+
+.wishlist-btn:hover {
+  transform: scale(1.12);
+  border-color: rgb(200, 200, 200);
+}
+
+.wishlist-btn:hover svg {
+  fill: rgb(220, 60, 60);
+}
+
+/* ── Product info ───────────────────────────────────────── */
 .product-name {
   height: 40px;
   margin-bottom: 5px;
@@ -124,33 +167,80 @@
 
 .product-quantity-container {
   margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.quantity-label {
+  font-size: 14px;
+  color: rgb(80, 80, 80);
 }
 
 .product-spacer {
   flex: 1;
 }
 
+/* ── Added to Cart feedback ─────────────────────────────── */
 .added-to-cart {
   color: rgb(6, 125, 98);
-  font-size: 16px;
-
+  font-size: 15px;
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-
-  /* At first, the "Added to cart" message will
-     be invisible. Use JavaScript to change the
-     opacity and make it visible. */
   opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .added-to-cart img {
-  height: 20px;
+  height: 18px;
   margin-right: 5px;
 }
 
+/* ── Add to cart button ─────────────────────────────────── */
 .add-to-cart-button {
   width: 100%;
   padding: 8px;
   border-radius: 50px;
+  transition: background 0.15s, transform 0.1s;
 }
+
+.add-to-cart-button:active {
+  transform: scale(0.97);
+}
+
+/* ── No results ─────────────────────────────────────────── */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 18px;
+  color: rgb(100, 100, 100);
+}
+
+/* ── Toast notification ─────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: rgb(33, 33, 33);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.25s;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.toast.toast-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
